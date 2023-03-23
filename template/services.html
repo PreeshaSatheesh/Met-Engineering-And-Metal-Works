@@ -1,0 +1,132 @@
+{% extends "headerfooter.html" %}
+{% block content %}
+    <!-- End Main Header -->
+
+
+    <!--Search Popup-->
+    <div id="search-popup" class="search-popup">
+        <div class="close-search theme-btn"><span class="flaticon-remove"></span></div>
+        <div class="popup-inner">
+            <div class="overlay-layer"></div>
+            <div class="search-form">
+                <form method="post" action="https://html.tonatheme.com/2022/welbim/index.html">
+                    <div class="form-group">
+                        <fieldset>
+                            <input type="search" class="form-control" name="search-input" value="" placeholder="Search Here" required >
+                            <input type="submit" value="Search Now!" class="theme-btn">
+                        </fieldset>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Title -->
+    <section class="page-title" style="background-image: url(/static/assets/images/background/bg-9.jpg);">
+        <div class="auto-container">
+            <div class="content-box">
+                <div class="content-wrapper">
+                    <div class="title">
+                        <h1>Services</h1>
+                    </div>
+                    <ul class="bread-crumb">
+                        <li><a href="/index/">Home</a></li>
+                        <li>Services</li>
+                    </ul>
+                </div>                    
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section style-two">
+        <div class="auto-container">
+            <div class="row">
+                {% for x in data %}
+                <div class="col-lg-4 col-md-6 service-block">
+                    <div class="inner-box">
+                        <div class="image"><span class="border-shape"></span><img src="{{x.product_image.url}}" style="width: 297.1; height:259.35; object-fit: contain;" alt=""></div>
+                        <div class="content">
+                            <h3><a href="/single/?sid={{x.id}}">{{x.product_name}}</a></h3>
+                            <div class="text">{{x.description}}</div>
+                            <div class="link">
+                                <a href="/single/?sid={{x.id}}" class="theme-btn btn-style-one"><span>Read More</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- <div class="col-lg-4 col-md-6 service-block">
+                    <div class="inner-box">
+                        <div class="image"><span class="border-shape"></span><img src="/static/assets/images/resource/image-5.jpg" alt=""></div>
+                        <div class="content">
+                            <h3><a href="metal-work.html"> Dustbin</a></h3>
+                            <div class="text">Lorem ipsum is simply free <br> text dolor sit am adipi we help you is in <br> the right jobs sicing elit.</div>
+                            <div class="link">
+                                <a href="metal-work.html" class="theme-btn btn-style-one"><span>Read More</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 service-block">
+                    <div class="inner-box">
+                        <div class="image"><span class="border-shape"></span><img src="/static/assets/images/resource/image-6.jpg" alt=""></div>
+                        <div class="content">
+                            <h3><a href="pipe-welding.html">Metal Architectural Features</a></h3>
+                            <div class="text">Lorem ipsum is simply free <br> text dolor sit am adipi we help you is in <br> the right jobs sicing elit.</div>
+                            <div class="link">
+                                <a href="pipe-welding.html" class="theme-btn btn-style-one"><span>Read More</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 service-block">
+                    <div class="inner-box">
+                        <div class="image"><span class="border-shape"></span><img src="/static/assets/images/resource/image-12.jpg" alt=""></div>
+                        <div class="content">
+                            <h3><a href="manufacturing.html">Metal Benches</a></h3>
+                            <div class="text">Lorem ipsum is simply free <br> text dolor sit am adipi we help you is in <br> the right jobs sicing elit.</div>
+                            <div class="link">
+                                <a href="manufacturing.html" class="theme-btn btn-style-one"><span>Read More</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 service-block">
+                    <div class="inner-box">
+                        <div class="image"><span class="border-shape"></span><img src="/static/assets/images/resource/image-13.jpg" alt=""></div>
+                        <div class="content">
+                            <h3><a href="fabrication.html">Trolleys</a></h3>
+                            <div class="text">Lorem ipsum is simply free <br> text dolor sit am adipi we help you is in <br> the right jobs sicing elit.</div>
+                            <div class="link">
+                                <a href="fabrication.html" class="theme-btn btn-style-one"><span>Read More</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 service-block">
+                    <div class="inner-box">
+                        <div class="image"><span class="border-shape"></span><img src="/static/assets/images/resource/image-14.jpg" alt=""></div>
+                        <div class="content">
+                            <h3><a href="aluminum-system.html">Racks</a></h3>
+                            <div class="text">Lorem ipsum is simply free <br> text dolor sit am adipi we help you is in <br> the right jobs sicing elit.</div>
+                            <div class="link">
+                                <a href="aluminum-system.html" class="theme-btn btn-style-one"><span>Read More</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+<script>
+$(document).ready(function(){
+ 
+   
+    $("#services").addClass("current");
+ 
+});
+</script>
+    
+    <!--Main Footer-->
+{% endblock %}  

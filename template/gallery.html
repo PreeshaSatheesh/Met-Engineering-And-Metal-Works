@@ -1,0 +1,87 @@
+{% extends "headerfooter.html" %}
+{% block content %}
+    <!-- End Main Header -->
+
+
+    <!--Search Popup-->
+    <div id="search-popup" class="search-popup">
+        <div class="close-search theme-btn"><span class="flaticon-remove"></span></div>
+        <div class="popup-inner">
+            <div class="overlay-layer"></div>
+            <div class="search-form">
+                <form method="post" action="https://html.tonatheme.com/2022/welbim/index.html">
+                    <div class="form-group">
+                        <fieldset>
+                            <input type="search" class="form-control" name="search-input" value="" placeholder="Search Here" required >
+                            <input type="submit" value="Search Now!" class="theme-btn">
+                        </fieldset>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Title -->
+    <section class="page-title" style="background-image: url(/static/assets/images/background/bg-9.jpg);">
+        <div class="auto-container">
+            <div class="content-box">
+                <div class="content-wrapper">
+                    <div class="title">
+                        <h1>Gallery</h1>
+                    </div>
+                    <ul class="bread-crumb">
+                        <li><a href="/">Home</a></li>
+                        <li>Gallery</li>
+                    </ul>
+                </div>                    
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Sidebar Page Container -->
+    <div class="sidebar-page-container"> 
+        <div class="auto-container">          
+            <div class="row">
+                {% for x in data %}
+                <div class="col-lg-4 col-md-6 service-block">
+                    <div class="inner-box">
+                            <div class="image">
+                                <a href="#"><img src="{{x.image.url}}" style="width: 297.1px; height: 297.1px; object-fit:contain;" alt=""></a>  
+                            </div>
+                    </div>
+                </div>
+                    {% endfor %}
+                    <!-- <div class="news-block-three">
+                        <div class="inner-box">
+                            <div class="image">
+                                <a href="#"><img src="/static/assets/images/resource/news-11.jpg" alt=""></a>
+                               
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-block-three">
+                        <div class="inner-box">
+                            <div class="image">
+                                <a href="#"><img src="/static/assets/images/resource/news-12.jpg" alt=""></a>
+                               
+                            </div>
+                            
+                        </div>
+                    </div> -->
+                   
+                </div> 
+                                
+            </div>
+        </div>
+    </div>
+ <script>
+$(document).ready(function(){
+ 
+   
+    $("#gallery").addClass("current");
+ 
+});
+</script>   
+    <!--Main Footer-->
+{% endblock %} 

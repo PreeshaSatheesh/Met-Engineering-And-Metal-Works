@@ -1,0 +1,140 @@
+{% extends "admin/headerfooter.html" %}
+{% block content %}
+   
+ <body class="sticky-header left-side-collapsed"  onload="initMap()">
+    <section>
+    <!-- left side start-->
+		<div class="left-side sticky-left-side">
+
+			<!--logo and iconic logo start-->
+			<div class="logo">
+				<h1><a href="/admin_index/">Easy <span>Admin</span></a></h1>
+			</div>
+			<div class="logo-icon text-center">
+				<a href="/admin_index/"><i class="lnr lnr-home"></i> </a>
+			</div>
+
+			<!--logo and iconic logo end-->
+			<div class="left-side-inner">
+
+				<!--sidebar nav start-->
+					<ul class="nav nav-pills nav-stacked custom-nav">
+						<li><a href="/admin_index/"><i class="lnr lnr-power-switch"></i><span>Dashboard</span></a></li>
+						<li class="active"><a href="#"><i class="lnr lnr-spell-check"></i> <span>Forms</span></a>
+							<ul class="sub-menu-list">
+								<li><a href="/admin_form_product/">Products Form</a> </li>
+								<li><a href="/admin_form_gallery/">Gallery Form</a> </li>
+							</ul>
+						</li>
+						<li><a href="#"><i class="lnr lnr-menu"></i> <span>Tables</span></a>
+							<ul class="sub-menu-list">
+								<li><a href="/admin_product_display/">Products Display</a> </li>
+								<li><a href="/admin_gallery_display/">Gallery Display</a> </li>
+							</ul></li>      
+						<li class="menu-list"><a href="#"><i class="lnr lnr-book"></i>  <span>Pages</span></a> 
+							<ul class="sub-menu-list">
+								<li><a href="/admin_signin/">Sign In</a> </li>
+								<li><a href="/admin_signup/">Sign Up</a></li>
+							</ul>
+						</li>
+					</ul>
+				<!--sidebar nav end-->
+			</div>
+		</div>
+    <!-- left side end-->
+    
+    <!-- main content start-->
+		<div class="main-content main-content3">
+			<!-- header-starts -->
+			<div class="header-section">
+			 
+			<!--toggle button start-->
+			<a class="toggle-btn  menu-collapsed"><i class="fa fa-bars"></i></a>
+			<!--toggle button end-->
+
+			<!--notification menu start -->
+			<div class="menu-right">
+				<div class="user-panel-top">  	
+					<div class="profile_details_left">
+						<ul class="nofitications-dropdown">
+							
+							<h3>Product Form Page</h3>   							   		
+							<div class="clearfix"></div>
+						</ul>
+					</div>
+					<div class="profile_details">		
+						<ul>
+							<li class="dropdown profile_details_drop">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+									<div class="profile_img">	
+										<span style="background:url(images/1.jpg) no-repeat center"> </span> 
+										 <div class="user-name">
+											<p>{{request.session.admin_name}}<span>Administrator</span></p>
+										 </div>
+										 <i class="lnr lnr-chevron-down"></i>
+										 <i class="lnr lnr-chevron-up"></i>
+										<div class="clearfix"></div>	
+									</div>	
+								</a>
+								<ul class="dropdown-menu drp-mnu">
+									<li> <a href="#"><i class="fa fa-cog"></i> Settings</a> </li> 
+									<li> <a href="#"><i class="fa fa-user"></i>Profile</a> </li>
+									{% if request.session.admin_id %}  
+									<li> <a href="/admin_signout/"><i class="fa fa-sign-out"></i> Logout</a> </li>
+									{% else %}
+									<li> <a href="/admin_signin/"><i class="fa fa-sign-in"></i> Login</a> </li>
+									<li> <a href="/admin_signup/"><i class="fa fa-user-circle-"></i> Registration</a> </li>
+									{% endif %}
+								</ul>
+							</li>
+							<div class="clearfix"> </div>
+						</ul>
+					</div>		
+				</div>
+			</div>
+			<!--notification menu end -->
+			</div>
+	<!-- //header-ends -->
+
+	
+			<div id="page-wrapper">
+				<div class="graphs">
+					<h3 class="blank1">Products</h3>
+					<!-- <h3 style="color: red">{{error}}</h3> -->
+						<div class="tab-content">
+						<div class="tab-pane active" id="horizontal-form">
+							<form class="form-horizontal" action="/admin_form_product/" method="post" enctype="multipart/form-data">
+								{% csrf_token %}
+								<div class="form-group">
+									<label for="product_name" class="col-sm-2 control-label">Product Name</label>
+									<div class="col-sm-8">
+										<input type="text" class="form-control1" id="product_name" name="product_name" placeholder="product name">
+									</div>
+								</div>
+								<div class="form-group">
+                                    <label for="product_image" class="col-sm-2 control-label">Select Image</label>
+                                    <div class="col-sm-8">
+                                    	<input type="file" class="form-control" id="product_image" name="product_image" placeholder="Image" >
+                                    </div>
+                                </div>
+								<div class="form-group">
+									<label for="description" class="col-sm-2 control-label">Product Description</label>
+									<div class="col-sm-8">
+										<textarea class="form-control" id="description" name="description" rows="4" cols="70" placeholder="product description"></textarea><br>
+								</div>
+								<div class="form-group">
+									<div class="row">
+										<div class="col-sm-8 col-sm-offset-2">
+											<button class="btn-success btn">Submit</button>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+						
+		<!--footer section start-->
+{% endblock %}		

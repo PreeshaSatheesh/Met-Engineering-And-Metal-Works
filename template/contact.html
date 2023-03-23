@@ -1,0 +1,133 @@
+{% extends "headerfooter.html" %}
+{% block content %}
+    <!-- End Main Header -->
+
+
+    <!--Search Popup-->
+    <div id="search-popup" class="search-popup">
+        <div class="close-search theme-btn"><span class="flaticon-remove"></span></div>
+        <div class="popup-inner">
+            <div class="overlay-layer"></div>
+            <div class="search-form">
+                <form method="post" action="https://html.tonatheme.com/2022/welbim/index.html">
+                    <div class="form-group">
+                        <fieldset>
+                            <input type="search" class="form-control" name="search-input" value="" placeholder="Search Here" required >
+                            <input type="submit" value="Search Now!" class="theme-btn">
+                        </fieldset>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Title -->
+    <section class="page-title" style="background-image: url(/static/assets/images/background/bg-9.jpg);">
+        <div class="auto-container">
+            <div class="content-box">
+                <div class="content-wrapper">
+                    <div class="title">
+                        <h1>Contact</h1>
+                    </div>
+                    <ul class="bread-crumb">
+                        <li><a href="/">Home</a></li>
+                        <li>Contact</li>
+                    </ul>
+                </div>                    
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact section -->
+    <section class="contact-section">
+        <div class="auto-container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="contact-map mb-30">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15204.630835425694!2d75.39341103102889!3d12.094608346256175!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba46d137034ea49%3A0x1d434c94ea51854b!2sMET%20ENGINEERING%20AND%20METAL%20WORKS!5e0!3m2!1sen!2sin!4v1679291709916!5m2!1sen!2sin" width="600" height="750"  frameborder="0" style="border:0; max-width: 750px; width: 100%" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="contact-details mb-30">
+                        <div class="sec-title mb-40">
+                            <div class="sub-title">Contact for help</div>
+                            <h2>get in touch <br>  with us</h2>
+                        </div>
+                        <div class="text mb-40">Contact us for your dream projects.We can assure the product quality along with your ideal choices with in the scheduled time.</div> 
+                        <div class="contact-info">
+                            <div class="icon-box">
+                                <div class="icon"><span class="flaticon-calling"></span></div>
+                                <div class="content">
+                                    <h5>Call Anytime</h5>
+                                    <div class="text"><a href="tel:926668880000">92 666 888 0000</a></div>
+                                </div>
+                            </div>
+                            <div class="icon-box">
+                                <div class="icon"><span class="flaticon-mail"></span></div>
+                                <div class="content">
+                                    <h5>Write email</h5>
+                                    <div class="text"><a href="mailto:needhelp@company.com">www.metengineeringandmetal<br>works.com</a></div>
+                                </div>
+                            </div>                                
+                            <div class="icon-box">
+                                <div class="icon"><span class="flaticon-pin"></span></div>
+                                <div class="content">
+                                    <h5>Visit Office</h5>
+                                    <div class="text">KINFRA Koovery, Taliparamba, Kerala 670142</div>
+                                </div>
+                            </div>
+                        </div>                       
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form section -->
+    <section class="contact-form-section">
+        <div class="auto-container">
+            <div class="sec-title text-center">
+                <div class="sub-title">Contact with us</div>
+                <h2>drop a message</h2>
+            </div>
+            <!--Contact Form-->
+            <div class="contact-form">
+                <form method="post" action="/contact/" id="contact-form">
+                    {% csrf_token %}
+                    <div class="row row-20">
+                        <div class="form-group col-md-6">
+                            <input type="text" name="full_name" id="full_name" value="" placeholder="Full Name" required>
+                        </div>                     
+                        <div class="form-group col-md-6">
+                            <input type="email" name="email" id="email" value="" placeholder="Email Address" required>
+                        </div>                        
+                        <div class="form-group col-md-6">
+                            <input type="text" name="phone" id="phone" value="" placeholder="Phone Number" required>
+                        </div>                      
+                        <div class="form-group col-md-6">
+                            <input type="text" name="subject" id="subject" value="" placeholder="Subject" required>
+                        </div>                      
+                        <div class="form-group col-md-12">
+                            <textarea name="message" id="message" placeholder="Write Message"></textarea>
+                        </div>                        
+                        <div class="form-group text-center col-md-12">
+                            <input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden" value="">
+                            <button class="theme-btn btn-style-one" type="submit" data-loading-text="Please wait..."><span>Send Message</span></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!--End Contact Form-->
+        </div>
+    </section>
+<script>
+$(document).ready(function(){
+ 
+   
+    $("#contact").addClass("current");
+ 
+});
+</script>
+    
+    <!--Main Footer-->
+{% endblock %}  

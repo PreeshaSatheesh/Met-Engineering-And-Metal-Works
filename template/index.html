@@ -1,0 +1,462 @@
+{% extends "headerfooter.html" %}
+{% block content %}
+    <!-- End Main Header -->
+
+    <!--Search Popup-->
+    <div id="search-popup" class="search-popup">
+        <div class="close-search theme-btn"><span class="flaticon-remove"></span></div>
+        <div class="popup-inner">
+            <div class="overlay-layer"></div>
+            <div class="search-form">
+                <form method="post" action="https://html.tonatheme.com/2022/welbim/index.html">
+                    <div class="form-group">
+                        <fieldset>
+                            <input type="search" class="form-control" name="search-input" value="" placeholder="Search Here" required >
+                            <input type="submit" value="Search Now!" class="theme-btn">
+                        </fieldset>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bnner Section -->
+    <section class="banner-section">
+        <div class="swiper-container banner-slider">
+            <div class="swiper-wrapper">
+                <!-- Slide Item -->
+                <div class="swiper-slide" style="background-image: url(/static/assets/images/main-slider/image-1.jpg);">
+                    <div class="content-outer">
+                        <div class="content-box">
+                            <div class="inner text-center">
+                                <h1>Met Engineering <br> and Metal Works</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide Item -->
+                <div class="swiper-slide" style="background-image: url(/static/assets/images/main-slider/profile_2.jpg);">
+                    <div class="content-outer">
+                        <div class="content-box">
+                            <div class="inner text-center">
+                                <h1>Met Engineering <br> and Metal Works</h1>
+                            </div>                              
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide Item -->
+                <div class="swiper-slide" style="background-image: url(/static/assets/images/main-slider/image-3.jpg);">
+                    <div class="content-outer">
+                        <div class="content-box">
+                            <div class="inner text-center">
+                                <h1>Met Engineering <br> and Metal Works</h1>
+                            </div>                      
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="banner-slider-nav">
+            <div class="banner-slider-control banner-slider-button-prev"><span><i class="flaticon-left-arrow"></i></span></div>
+            <div class="banner-slider-control banner-slider-button-next"><span><i class="flaticon-left-arrow"></i></span> </div>
+        </div>
+    </section>
+    <!-- End Bnner Section -->
+
+    <!-- Welcome Section -->
+    <section class="welcome-section">
+        <div class="background-image"><img src="/static/assets/images/resource/image-3.jpg" alt=""></div>
+        <div class="auto-container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="image-wrapper">
+                        <div class="image-one wow fadeInUp" data-wow-duration="1500ms"><img src="/static/assets/images/resource/image-1.jpg" alt=""></div>
+                        <div class="image-two" data-parallax='{"y": 100}'><img src="/static/assets/images/resource/image-2.jpg" alt=""></div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="content-side">
+                        <div class="sec-title">
+                            <div class="sub-title">Welcome to Met Engineering And Metal - Works</div>
+                            <h2>We’re Committed <br> To quality</h2>
+                        </div>
+                        <div class="text wow fadeInUp" data-wow-duration="1500ms">Met Engineers manufacture products like keychains, sofas, clocks, and many other items in metal. Our main feature is that we make custom products with our customer's photos and names. We create high-quality metal products.</div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul class="list wow fadeInUp" data-wow-duration="1500ms">
+                                    <li>We provide 24/7 service</li>
+                                    <li>We strick to deadline</li>
+                                    <li>We offer upfront pricing</li>
+                                    <li>We use latest technology</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="icon-box wow fadeInUp" data-wow-duration="1500ms">
+                                    <div class="icon"><span class="flaticon-welder"></span></div>
+                                    <h4>Welding joins <br>together </h4>
+                                </div>
+                                <div class="icon-box wow fadeInUp" data-wow-duration="1500ms">
+                                    <div class="icon"><span class="flaticon-welding-machine"></span></div>
+                                    <h4>Have all metal <br> works tools </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="note">PROFESSIONAL METAL WORKS <br>  COMPANY IN KANNUR</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="auto-container">
+            <div class="wrapper-box">
+                <h3>Looking for a quality and <br>affordable project?</h3>
+                <div class="link wow fadeInUp" data-wow-duration="1500ms">
+                    <a href="/contact/" class="theme-btn btn-style-one"><span>Contact With Us</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section pb-0">
+        <div class="sec-bg" style="background-image: url(/static/assets/images/background/bg-1.jpg);"></div>
+        <div class="auto-container">
+            <div class="sec-title text-center light">
+                <div class="sub-title">Our Services</div>
+                <h2>What we offer</h2>
+            </div>
+            <div class="row">
+                {% for x in data %}
+                <div class="col-lg-4 col-md-6 service-block">
+                    <div class="inner-box wow fadeInUp" data-wow-duration="1500ms">
+                        <div class="image"><img src="{{x.product_image.url}}" style="width: 297.1; height:259.35; object-fit: contain;" alt=""></div>
+                        <div class="content">
+                            <h3><a href="/single/?sid={{x.id}}">{{x.product_name}}</a></h3>
+                            <div class="text">{{x.description}}</div>
+                            <div class="link">
+                                <a href="/single/?sid={{x.id}}" class="theme-btn btn-style-one"><span>Read More</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- <div class="col-lg-4 col-md-6 service-block">
+                    <div class="inner-box wow fadeInDown" data-wow-duration="1500ms">
+                        <div class="image"><img src="/static/assets/images/resource/image-5.jpg" alt=""></div>
+                        <div class="content">
+                            <h3><a href="metal-work.html"> Metal Works</a></h3>
+                            <div class="text">Lorem ipsum is simply free <br> text dolor sit am adipi we help you is in <br> the right jobs sicing elit.</div>
+                            <div class="link">
+                                <a href="metal-work.html" class="theme-btn btn-style-one"><span>Read More</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- <div class="col-lg-4 col-md-6 service-block">
+                    <div class="inner-box wow fadeInUp" data-wow-duration="1500ms">
+                        <div class="image"><img src="/static/assets/images/resource/image-6.jpg" alt=""></div>
+                        <div class="content">
+                            <h3><a href="pipe-welding.html">Pipe Welding</a></h3>
+                            <div class="text">Lorem ipsum is simply free <br> text dolor sit am adipi we help you is in <br> the right jobs sicing elit.</div>
+                            <div class="link">
+                                <a href="pipe-welding.html" class="theme-btn btn-style-one"><span>Read More</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Testimonials section -->
+    <section class="testimonials-section" style="background-image: url(/static/assets/images/background/bg-2.jpg);">
+        <div class="auto-container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="sec-title">
+                        <!-- <div class="sub-title">Our Testimonials</div> -->
+                        <h2>What they say</h2>
+                    </div>
+                    <div class="testimonial-block-area">
+                        <div class="swiper-container testimonial-thumbs">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="author-thumb"><img src="/static/assets/images/resource/author_1.jpg" alt=""></div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="author-thumb"><img src="/static/assets/images/resource/author_2.jpg" alt=""></div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="author-thumb"><img src="/static/assets/images/resource/author_3.jpg" alt=""></div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="author-thumb"><img src="/static/assets/images/resource/author_1.jpg" alt=""></div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="author-thumb"><img src="/static/assets/images/resource/author_2.jpg" alt=""></div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="author-thumb"><img src="/static/assets/images/resource/author_3.jpg" alt=""></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Swiper -->
+                        <div class="swiper-container testimonial-content">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <!-- Testimonial Block -->
+                                    <div class="testimonial-block">
+                                        <div class="inner-box">
+                                            <div class="text">This organization is a complete turn key source for custom metal works fabrication.Our specialty has been and is metal works for the the trade show exhibit business.We still maintain a 100% delivery record of exhibits for our clients.</div>
+                                            <div class="author-title">Pradeep shukla<span>/ Proprietor</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <!-- Testimonial Block -->
+                                    <div class="testimonial-block">
+                                        <div class="inner-box">
+                                            <div class="text">Wall art,fencing panel,racks are trending products in metal works.So lots of works related to these products are coming.And we provide quality products according to clients choices. Customization with quality is our aim.</div>
+                                            <div class="author-title">Jacob<span>/ Mechanical Engineer</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <!-- Testimonial Block -->
+                                    <div class="testimonial-block">
+                                        <div class="inner-box">
+                                            <div class="text">I'm working as welder in this company along 5 years.The employer-employee relationship is still well as in the beginning.Good quality metals are imported here and well-functioned tools are using.Customer Satisfaction is important.</div>
+                                            <div class="author-title">Ravindar <span>/ Senior Welder</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <!-- Testimonial Block -->
+                                    <div class="testimonial-block">
+                                        <div class="inner-box">
+                                            <div class="text">This organization is a complete turn key source for custom metal works fabrication.Our specialty has been and is metal works for the the trade show exhibit business.We still maintain a 100% delivery record of exhibits for our clients.</div>
+                                            <div class="author-title">Pradeep shukla<span>/ Proprietor</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <!-- Testimonial Block -->
+                                    <div class="testimonial-block">
+                                        <div class="inner-box">
+                                            <div class="text">Wall art,fencing panel,racks are trending products in metal works.So lots of works related to these products are coming.And we provide quality products according to clients choices. Customization with quality is our aim.</div>
+                                            <div class="author-title">Jacob<span>/ Mechanical Engineer</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <!-- Testimonial Block -->
+                                   <div class="testimonial-block">
+                                        <div class="inner-box">
+                                            <div class="text">I'm working as welder in this company along 5 years.The employer-employee relationship is still well as in the beginning.Good quality metals are imported here and well-functioned tools are using.Customer Satisfaction is important.</div>
+                                            <div class="author-title">Ravindar <span>/ Senior Welder</span></div>
+                                        </div>
+                                    </div>
+                                </div>    
+                            </div>                   
+
+                        </div>                        
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="icon-box wow fadeInUp" data-wow-duration="1500ms">
+                        <div class="icon"><span class="flaticon-welding"></span></div>
+                        <h4>We’re Good in All <br>Metal Works</h4>
+                    </div>
+                    <div class="icon-box wow fadeInUp" data-wow-duration="1500ms">
+                        <div class="icon"><span class="flaticon-welder-1"></span></div>
+                        <h4>Expert & Professional <br> Welder Workers</h4>
+                    </div>
+                    <div class="icon-box wow fadeInUp" data-wow-duration="1500ms">
+                        <div class="icon"><span class="flaticon-welding-machine-1"></span></div>
+                        <h4>We’re Using Quality <br> Welding Tools</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="auto-container">
+            <div class="sec-title text-center">
+                <div class="sub-title">Our Services</div>
+                <h2>What we offer</h2>
+            </div>
+            <div class="row">   
+                <div class="col-lg-4 col-md-6 team-block">
+                    <div class="inner-box wow fadeInUp" data-wow-duration="1500ms">
+                        <div class="image"><img src="/static/assets/images/resource/index_worker.jpg" style="width: 297.1px; height: 357.32px; object-fit:cover;" alt=""></div>
+                        <div class="content">
+                            <h4>Prabakar</h4>
+                            <div class="designation">Machinist</div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 team-block">
+                    <div class="inner-box wow fadeInDown" data-wow-duration="1500ms">
+                        <div class="image"><img src="/static/assets/images/resource/index_worker2.jpg" style="width: 297.1px; height: 357.32px; object-fit:cover;" alt=""></div>
+                        <div class="content">
+                            <h4>Mukesh</h4>
+                            <div class="designation">Welder</div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 team-block">
+                    <div class="inner-box wow fadeInUp" data-wow-duration="1500ms">
+                        <div class="image"><img src="/static/assets/images/resource/index_worker3.jpg" style="width: 297.1px; height: 357.32px; object-fit:cover;" alt=""></div>
+                        <div class="content">
+                            <h4>Sanjeev</h4>
+                            <div class="designation">Mechanical Designer</div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facts Section -->
+    <section class="facts-section" style="background-image: url(/static/assets/images/background/bg-3.jpg);">
+        <div class="auto-container">
+            <div class="row">
+                <div class="col-xl-7 offset-xl-5">
+                    <div class="wrapper-box">
+                        <div class="sec-title light">
+                            
+                            <h2>Dream it, We can <br>Build it</h2>
+                        </div>
+                        <div class="text">Metalworking is the process of forming and shaping metals to create useful tools, objects, equipment parts, and structures. Metalworking projects generally fall under the categories of forming, cutting, and joining, and may involve techniques such as cutting, welding, casting, and molding. Materials used for metalworking include ferrous and non-ferrous metals such as steel, aluminum, gold, silver, bronze, iron, and more.</div>
+                        <div class="facts-area">
+                            <div class="row">
+                                <!--Column-->
+                                <div class="column counter-column col-md-4">
+                                    <div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                                        <div class="content">
+                                            <div class="count-outer count-box">
+                                                <span class="count-text" data-speed="3000" data-stop="800">0</span>
+                                            </div>
+                                            <div class="fact-text"> Projects <br> Completed</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Column-->
+                                <div class="column counter-column col-md-4">
+                                    <div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                                        <div class="content">
+                                            <div class="count-outer count-box">
+                                                <span class="count-text" data-speed="3000" data-stop="681">0</span>
+                                            </div>
+                                            <div class="fact-text"> Satisfied <br> Clients</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Column-->
+                                <div class="column counter-column col-md-4">
+                                    <div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                                        <div class="content">
+                                            <div class="count-outer count-box">
+                                                <span class="count-text" data-speed="3000" data-stop="909">0</span>
+                                            </div>
+                                            <div class="fact-text">Metal <br> Works</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News section -->
+    <section class="news-section">
+        <div class="auto-container">
+            <div class="sec-title text-center">
+                <div class="sub-title">From The Blog</div>
+                <h2>News & artilces</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 news-block">
+                    <div class="inner-box wow fadeInUp" data-wow-duration="1500ms">
+                        <div class="image"><img src="/static/assets/images/resource/news-1.jpg" alt=""></div>
+                        <div class="content">
+                            <div class="post-meta">by Admin  .  20 Aug, 2020</div>
+                            <h4><a href="blog-details.html">It Joins two <br> pieces of metal</a></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 news-block style-two">
+                    <div class="inner-box wow fadeInUp" data-wow-duration="1500ms">
+                        <div class="image"><img src="/static/assets/images/resource/news-2.jpg" alt=""></div>
+                        <div class="content">
+                            <div class="post-meta">by Admin  .  20 Aug, 2020</div>
+                            <h4><a href="blog-details.html">when the welding <br> Output is on</a></h4>
+                        </div>
+                    </div>
+                    <div class="inner-box wow fadeInUp" data-wow-duration="1500ms">
+                        <div class="image"><img src="/static/assets/images/resource/news-3.jpg" alt=""></div>
+                        <div class="content">
+                            <div class="post-meta">by Admin  .  20 Aug, 2020</div>
+                            <h4><a href="blog-details.html">We’re creating a <br> metal product</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Logo Section -->
+     <section class="clients-logo-section">
+        <div class="auto-container">
+            
+
+    <!-- Newsletter -->
+    <section class="newsletter-section" style="background-image: url(/static/assets/images/background/bg-4.jpg);">
+        <div class="auto-container">
+            <div class="wrapper-box">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h3>Subscribe to newsletter</h3>
+                        <div class="icon-box wow fadeInUp" data-wow-duration="1500ms">
+                            <div class="icon"><span class="flaticon-mail-1"></span></div>
+                            <div class="text">Aliq is notm hendr erit a lorem ipsum insum simply free text image pellen tesion available.</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="newsletter-form">
+                            <form class="ajax-sub-form" method="post">
+                                <div class="form-group">
+                                    <input type="email" placeholder="Enter Your Email Address..." id="subscription-email">
+                                    <button type="submit" class="theme-btn btn-style-one"><span>Subscribe</span></button>
+                                    <label class="subscription-label" for="subscription-email"></label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div>        
+    </section>
+    <script>
+$(document).ready(function(){
+ 
+   
+    $("#home").addClass("current");
+ 
+});
+</script>
+
+    <!--Main Footer-->
+{% endblock %}

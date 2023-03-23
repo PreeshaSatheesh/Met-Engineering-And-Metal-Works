@@ -1,0 +1,145 @@
+{% extends "headerfooter.html" %}
+{% block content %}
+    <!-- End Main Header -->
+
+
+    <!--Search Popup-->
+    <div id="search-popup" class="search-popup">
+        <div class="close-search theme-btn"><span class="flaticon-remove"></span></div>
+        <div class="popup-inner">
+            <div class="overlay-layer"></div>
+            <div class="search-form">
+                <form method="post" action="https://html.tonatheme.com/2022/welbim/index.html">
+                    <div class="form-group">
+                        <fieldset>
+                            <input type="search" class="form-control" name="search-input" value="" placeholder="Search Here" required >
+                            <input type="submit" value="Search Now!" class="theme-btn">
+                        </fieldset>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Title -->
+    {% for x in data %}
+    <section class="page-title" style="background-image: url(/static/assets/images/background/bg-9.jpg);">
+        <div class="auto-container">
+            <div class="content-box">
+                <div class="content-wrapper">
+                    <div class="title">
+                        <h1>{{x.product_name}}</h1>
+                    </div>
+                    <ul class="bread-crumb">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/services/">Service</a></li>
+                    </ul>
+                </div>                    
+            </div>
+        </div>
+    </section>
+
+    <!-- Service details -->
+    <section class="service-details">
+        <div class="auto-container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="content-side">
+                        <div class="image"><img src="{{x.product_image.url}}" alt=""></div>
+                        <h2>{{x.product_name}}</h2>
+                        <div class="text">
+                            <p>{{x.description}}</p>
+                        </div>
+                        <div class="row mb-30">
+                            <div class="col-md-6">
+                                <div class="image"><img src="/static/assets/images/resource/image-16.jpg" alt=""></div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="image"><img src="/static/assets/images/resource/profile_2.jpg" style="width: 369.99px;height: 367.99px; object-fit: contain;" alt=""></div>
+                            </div>
+                        </div>
+                        <div class="service-benifit">
+                            
+                            <div class="row align-items-center">
+                                <div class="col-lg-8">
+                                    <h3>Benfits of service</h3>
+                                    <div class="text">The advantages of custom metal fabrication includes metal's high heat resistance and can maintain structural integrity under high temperatures. Metals also have a tendency to be stronger, tougher and more durable than plastics, which makes them better for structural purposes.</div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="icon-box">
+                                        <div class="icon"><span class="flaticon-welder"></span></div>
+                                        <h4>Welding joins <br> together </h4>
+                                    </div>
+                                    <div class="icon-box">
+                                        <div class="icon"><span class="flaticon-welding-machine"></span></div>
+                                        <h4>Have all metal <br> works tools</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="accordion-box">
+                            <!--Accordion Block-->
+                            <li class="accordion block">
+                                <div class="acc-btn"><div class="icon-outer"><span class="fas fa-plus"></span></div>Providing full range of high metal services solution</div>
+                                <div class="acc-content">
+                                    <div class="content">
+                                        <div class="text">Metals have higher melting points. Even if the temperature rises a bit, metal does not easily degrade.
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+            
+                            <!--Accordion Block-->
+                            <li class="accordion block">
+                                <div class="acc-btn active"><div class="icon-outer"><span class="fas fa-plus"></span></div>Get a solution for all Metal works</div>
+                                <div class="acc-content current">
+                                    <div class="content">
+                                        <div class="text">Metal can go through a wider range of processes including chipping, deep drawing, casting, forging, welding, and soldering. 
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+            
+                            <!--Accordion Block-->
+                            <li class="accordion block">
+                                <div class="acc-btn"><div class="icon-outer"><span class="fas fa-plus"></span></div> Metal works crafts manship built to scale</div>
+                                <div class="acc-content">
+                                    <div class="content">
+                                        <div class="text">Metal is more cost efficient when it comes to long term, high volume lines of production.Providing good communication towards the clients.
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>                       
+                            <!-- End Block -->
+                        </ul>
+                    </div>
+                </div>
+                <aside class="col-lg-4 sidebar service-sidebar">
+                    <div class="widget category-widget-two">
+                        <ul class="widget cat-list">
+                            <li><a href="#">Wall Art</a></li>
+                            <li><a href="#">Metal Architectural Features</a></li>
+                            <li><a href="#">Metal Cladding Wall Art</a></li>
+                            <li><a href="#">Racks</a></li>
+                            <li><a href="#">Metal Fencing Panel</a></li>
+                            <li><a href="#">Metal Benches</a></li>
+                            <li><a href="#">Personalised Keychain</a></li>
+                            <li><a href="#">Trolleys</a></li>
+                            <li><a href="#">Metal Partition</a></li>
+                            <li><a href="#">Metal Garbage Bin</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="widget consult-widget">
+                        <div class="icon"><span class="fab fa-twitter"></span></div>
+                        <div class="text">Contact with <br> us for any <br> project</div>
+                        <div class="phone"><a href="tel:928886660000">92 888 666 0000</a></div>
+                    </div>
+                </aside>
+            </div>                        
+        </div>
+    </section>
+    {% endfor %}
+    
+    <!--Main Footer-->
+{% endblock %}

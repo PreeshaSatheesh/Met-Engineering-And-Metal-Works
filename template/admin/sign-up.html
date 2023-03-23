@@ -1,0 +1,88 @@
+{% extends "admin/headerfooter.html" %}
+{% block content %}
+   
+ <body class="sign-in-up">
+    <section>
+			<div id="page-wrapper" class="sign-in-wrapper">
+				<div class="graphs">
+					<h3 style="color: red">{{error}}</h3>
+					<div class="sign-up">
+						<h3>Register Here</h3>
+						<p class="creating">Having hands on experience in creating innovative designs,I do offer design 
+							solutions which harness.</p>
+						<h5>Personal Information</h5>
+						<div class="sign-u">
+							<div class="sign-up1">
+								<h4>First Name* :</h4>
+							</div>
+							<div class="sign-up2">
+								<form action="/admin_signup/" method="post">
+									{% csrf_token %}
+									<input type="text" id="first_name" name="first_name" placeholder=" " required=" "/>
+								
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="sign-u">
+							<div class="sign-up1">
+								<h4>Last Name* :</h4>
+							</div>
+							<div class="sign-up2">
+								
+									
+									<input type="text" id="last_name" name="last_name" placeholder=" " required=" "/>
+								
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="sign-u">
+							<div class="sign-up1">
+								<h4>Email Address* :</h4>
+							</div>
+							<div class="sign-up2">
+								
+									<input type="text" id="email" name="email" placeholder=" " required=" "/>
+								
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<h6>Login Information</h6>
+						<div class="sign-u">
+							<div class="sign-up1">
+								<h4>Password* :</h4>
+							</div>
+							<div class="sign-up2">
+								
+									<input type="password" id="password" name="password" placeholder=" " required=" "/>
+								
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="sign-u">
+							<div class="sign-up1">
+								<h4>Confirm Password* :</h4>
+							</div>
+							<div class="sign-up2">
+								
+									<input type="password" id="confirm_password" name="confirm_password" placeholder=" " required=" "/>
+								
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="sub_home">
+							<div class="sub_home_left">
+								
+									<input type="submit" value="Submit">
+								</form>
+							</div>
+							<div class="sub_home_right">
+								<p>Go Back to <a href="/admin_index/">Home</a></p>
+								<p>Already Registered ?<a href="/admin_signin/">Login</a></p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<!--footer section start-->
+{% endblock %}		
